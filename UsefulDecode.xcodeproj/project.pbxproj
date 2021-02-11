@@ -9,7 +9,12 @@
 /* Begin PBXBuildFile section */
 		7A1475E025CDEAF000DDAF57 /* UsefulDecode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1475D625CDEAF000DDAF57 /* UsefulDecode.framework */; };
 		7A1475E525CDEAF000DDAF57 /* UsefulDecodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1475E425CDEAF000DDAF57 /* UsefulDecodeTests.swift */; };
-		7A1475E725CDEAF000DDAF57 /* UsefulDecode.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1475D925CDEAF000DDAF57 /* UsefulDecode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A1475F125CDEB2E00DDAF57 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1475F025CDEB2E00DDAF57 /* Models.swift */; };
+		7A1475F325CDEB5E00DDAF57 /* JSONDecoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1475F225CDEB5E00DDAF57 /* JSONDecoder+Extensions.swift */; };
+		7A1475F525CDEBB300DDAF57 /* Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1475F425CDEBB300DDAF57 /* Decoding.swift */; };
+		7A1475F725CDEBD400DDAF57 /* DecodingError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1475F625CDEBD400DDAF57 /* DecodingError+Extensions.swift */; };
+		7A1475F925CDEC5F00DDAF57 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1475F825CDEC5F00DDAF57 /* Errors.swift */; };
+		7A1475FB25CDECEB00DDAF57 /* CodingKey+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1475FA25CDECEB00DDAF57 /* CodingKey+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +29,16 @@
 
 /* Begin PBXFileReference section */
 		7A1475D625CDEAF000DDAF57 /* UsefulDecode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UsefulDecode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A1475D925CDEAF000DDAF57 /* UsefulDecode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UsefulDecode.h; sourceTree = "<group>"; };
 		7A1475DA25CDEAF000DDAF57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A1475DF25CDEAF000DDAF57 /* UsefulDecodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UsefulDecodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A1475E425CDEAF000DDAF57 /* UsefulDecodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsefulDecodeTests.swift; sourceTree = "<group>"; };
 		7A1475E625CDEAF000DDAF57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A1475F025CDEB2E00DDAF57 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		7A1475F225CDEB5E00DDAF57 /* JSONDecoder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extensions.swift"; sourceTree = "<group>"; };
+		7A1475F425CDEBB300DDAF57 /* Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoding.swift; sourceTree = "<group>"; };
+		7A1475F625CDEBD400DDAF57 /* DecodingError+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DecodingError+Extensions.swift"; sourceTree = "<group>"; };
+		7A1475F825CDEC5F00DDAF57 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		7A1475FA25CDECEB00DDAF57 /* CodingKey+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingKey+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +81,12 @@
 		7A1475D825CDEAF000DDAF57 /* UsefulDecode */ = {
 			isa = PBXGroup;
 			children = (
-				7A1475D925CDEAF000DDAF57 /* UsefulDecode.h */,
 				7A1475DA25CDEAF000DDAF57 /* Info.plist */,
+				7A1475F225CDEB5E00DDAF57 /* JSONDecoder+Extensions.swift */,
+				7A1475F425CDEBB300DDAF57 /* Decoding.swift */,
+				7A1475F625CDEBD400DDAF57 /* DecodingError+Extensions.swift */,
+				7A1475FA25CDECEB00DDAF57 /* CodingKey+Extensions.swift */,
+				7A1475F825CDEC5F00DDAF57 /* Errors.swift */,
 			);
 			path = UsefulDecode;
 			sourceTree = "<group>";
@@ -81,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				7A1475E425CDEAF000DDAF57 /* UsefulDecodeTests.swift */,
+				7A1475F025CDEB2E00DDAF57 /* Models.swift */,
 				7A1475E625CDEAF000DDAF57 /* Info.plist */,
 			);
 			path = UsefulDecodeTests;
@@ -93,7 +108,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A1475E725CDEAF000DDAF57 /* UsefulDecode.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +161,7 @@
 				TargetAttributes = {
 					7A1475D525CDEAF000DDAF57 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 					7A1475DE25CDEAF000DDAF57 = {
 						CreatedOnToolsVersion = 12.5;
@@ -194,6 +209,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A1475F925CDEC5F00DDAF57 /* Errors.swift in Sources */,
+				7A1475F525CDEBB300DDAF57 /* Decoding.swift in Sources */,
+				7A1475FB25CDECEB00DDAF57 /* CodingKey+Extensions.swift in Sources */,
+				7A1475F725CDEBD400DDAF57 /* DecodingError+Extensions.swift in Sources */,
+				7A1475F325CDEB5E00DDAF57 /* JSONDecoder+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A1475E525CDEAF000DDAF57 /* UsefulDecodeTests.swift in Sources */,
+				7A1475F125CDEB2E00DDAF57 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +361,7 @@
 		7A1475EB25CDEAF000DDAF57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -357,6 +379,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.UsefulDecode;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -364,6 +387,7 @@
 		7A1475EC25CDEAF000DDAF57 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -388,6 +412,7 @@
 		7A1475EE25CDEAF000DDAF57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2KJHM26Y46;
@@ -406,6 +431,7 @@
 		7A1475EF25CDEAF000DDAF57 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2KJHM26Y46;
