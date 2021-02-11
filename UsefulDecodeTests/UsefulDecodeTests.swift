@@ -163,6 +163,9 @@ class UsefulDecodeTests: XCTestCase {
 ]
 """)
         #warning("TODO: Support multiple key decoding strategies?")
+        // NOTE: this test is known to fail because the type that we get from the error is
+        // KeyedDecodingContainer<CodingKeys> or something like that instead of Address, which is what
+        // we would expect. Probably a JSONDecoder bug? But may be intentional? Unclear.
         XCTAssertThrowsError(try decoder.decodeWithBetterErrors([Person].self, from: data)) { error in
             XCTAssertEqual(String(describing: error), """
                 Value not found: expected 'address' (Address) at [0]/address, got:
