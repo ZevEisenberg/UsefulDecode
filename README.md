@@ -1,6 +1,6 @@
 # UsefulDecode
 
-A quick sketch of a more useful error reporting experience for `JSONDecoer`.
+A quick sketch of a more useful error reporting experience for `JSONDecoder`.
 
 Before:
 
