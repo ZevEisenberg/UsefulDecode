@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ExfiltratedJSONDecoder",
+        "repositoryURL": "https://github.com/GeorgeLyon/ExfiltratedJSONDecoder.git",
+        "state": {
+          "branch": "main",
+          "revision": "a3accd4caae31c6b9c951713f6a02f61092b4e66",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
