@@ -24,7 +24,3 @@ let decoder = JSONDecoder()
 let value = try decoder.decodeWithBetterErrors(MyCoolType.self, from: someData)
 // there's no step 3
 ```
-
-## Installation
-
-There's no Package.swift yet. If I decide it's finished enough to be usable in production, I'll add one.
