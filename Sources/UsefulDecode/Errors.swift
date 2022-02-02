@@ -59,6 +59,11 @@ public struct BetterValueNotFound: Error {
     let path: [CodingKey]
 }
 
+public struct BetterNoValueFound: Error {
+  let debugDescription: String
+  let container: Any
+}
+
 public struct DataCorrupted: Error {
     let path: [CodingKey]
 }
@@ -83,6 +88,12 @@ private func objectToJSON(_ object: Any) -> String {
         return String(describing: object)
     }
 
+}
+
+extension BetterNoValueFound: CustomStringConvertible {
+  public var description: String {
+      "Value not found: \(debugDescription), got:\n\(objectToJSON(container))"
+  }
 }
 
 extension BetterTypeMismatch: CustomStringConvertible {
