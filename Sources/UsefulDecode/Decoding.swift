@@ -8,12 +8,12 @@
 import Foundation
 
 func processDecodingError(_ error: DecodingError, inJSONObject jsonObject: Any) -> Error {
-  guard let context = error.context else {
+    guard let context = error.context else {
         return NoContextError(underlying: error)
     }
-  guard let key = context.codingPath.first else {
-    return BetterNoValueFound(debugDescription: context.debugDescription, container: jsonObject)
-  }
+    guard let key = context.codingPath.first else {
+        return BetterNoValueFound(debugDescription: context.debugDescription, container: jsonObject)
+    }
     return processDecodingErrorRecursive(
         error,
         context: context,

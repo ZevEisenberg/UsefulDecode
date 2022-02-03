@@ -194,27 +194,27 @@ class UsefulDecodeTests: XCTestCase {
         }
     }
 
-  func testFirstLevelCrash() throws {
-    // Should crash because "name" is spelled "names"
-    let data = makeData("""
+    func testFirstLevelCrash() throws {
+        // Should crash because "name" is spelled "names"
+        let data = makeData("""
 {
       "names": "Big",
       "feathers": "some"
 }
   
 """)
-    
-    XCTAssertThrowsError(try decoder.decodeWithBetterErrors(Bird.self, from: data)) { error in
-      XCTAssertEqual(String(describing: error), """
+
+        XCTAssertThrowsError(try decoder.decodeWithBetterErrors(Bird.self, from: data)) { error in
+            XCTAssertEqual(String(describing: error), """
 Value not found: No value associated with key CodingKeys(stringValue: "name", intValue: nil) ("name")., got:
 {
   "feathers" : "some",
   "names" : "Big"
 }
 """)
+        }
     }
-  }
-
+    
 }
 
 private extension UsefulDecodeTests {

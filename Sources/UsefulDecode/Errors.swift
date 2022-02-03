@@ -60,8 +60,8 @@ public struct BetterValueNotFound: Error {
 }
 
 public struct BetterNoValueFound: Error {
-  let debugDescription: String
-  let container: Any
+    let debugDescription: String
+    let container: Any
 }
 
 public struct DataCorrupted: Error {
