@@ -91,9 +91,9 @@ private func objectToJSON(_ object: Any) -> String {
 }
 
 extension BetterNoValueFound: CustomStringConvertible {
-  public var description: String {
-      "Value not found: \(debugDescription), got:\n\(objectToJSON(container))"
-  }
+    public var description: String {
+        "Value not found: \(debugDescription), got:\n\(objectToJSON(container))"
+    }
 }
 
 extension BetterTypeMismatch: CustomStringConvertible {
