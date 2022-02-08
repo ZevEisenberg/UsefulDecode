@@ -11,11 +11,14 @@ func processDecodingError(_ error: DecodingError, inJSONObject jsonObject: Any) 
     guard let context = error.context else {
         return NoContextError(underlying: error)
     }
+    guard let key = context.codingPath.first else {
+        return BetterNoValueFound(debugDescription: context.debugDescription, container: jsonObject)
+    }
     return processDecodingErrorRecursive(
         error,
         context: context,
         inJSONObject: jsonObject,
-        key: context.codingPath.first!,
+        key: key,
         remainingCodingPath: context.codingPath.dropFirst()
     )
 }
