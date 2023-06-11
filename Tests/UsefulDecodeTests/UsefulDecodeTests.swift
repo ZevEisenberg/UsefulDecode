@@ -188,9 +188,15 @@ class UsefulDecodeTests: XCTestCase {
             """)
         // TODO: Support multiple key decoding strategies?
         XCTAssertThrowsError(try decoder.decodeWithBetterErrors([Person].self, from: data)) { error in
+#if swift(<5.8)
             XCTAssertEqual(String(describing: error), """
                 JSONSerializationFailed(reason: "Unescaped control character around character 87.")
                 """)
+#else
+            XCTAssertEqual(String(describing: error), """
+                JSONSerializationFailed(reason: "Unescaped control character around line 5, column 16.")
+                """)
+#endif
         }
     }
 
