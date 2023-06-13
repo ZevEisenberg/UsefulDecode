@@ -7,11 +7,12 @@
 
 import XCTest
 @testable import UsefulDecode
+import ExfiltratedJSONDecoder
 
 class UsefulDecodeTests: XCTestCase {
 
-    let decoder: JSONDecoder = {
-        let d = JSONDecoder()
+    let decoder: Foundation.JSONDecoder = {
+        let d = Foundation.JSONDecoder()
         d.keyDecodingStrategy = .convertFromSnakeCase
         return d
     }()
@@ -164,6 +165,20 @@ class UsefulDecodeTests: XCTestCase {
             """)
         // TODO: Support multiple key decoding strategies?
         XCTExpectFailure("NOTE: this test is known to fail because the type that we get from the error is KeyedDecodingContainer<CodingKeys> or something like that instead of Address, which is what we would expect. Probably a JSONDecoder bug? But may be intentional? Unclear.")
+
+        let exf: ExfiltratedJSONDecoder.JSONDecoder = {
+            let d = ExfiltratedJSONDecoder.JSONDecoder()
+            d.keyDecodingStrategy = .convertFromSnakeCase
+            return d
+        }()
+        do {
+            _ = try exf.decode([Person].self, from: data)
+        }
+        catch {
+            var s = ""
+            dump(error, to: &s)
+            print(s)
+        }
         XCTAssertThrowsError(try decoder.decodeWithBetterErrors([Person].self, from: data)) { error in
             XCTAssertEqual(String(describing: error), """
                 Value not found: expected 'address' (Address) at [0]/address, got:
